@@ -312,7 +312,7 @@
 
 <script>
 (() => {
-    const INNING_SECONDS = 12 * 60;
+    const INNING_SECONDS = 15 * 60;
 
     // Bodované události dle § 5 pravidel Brännballu.
     // Struktura: každá role má pole řádků. Řádek obsahuje 1–2 akce a CSS třídu pro velikost.
@@ -321,8 +321,8 @@
         bat: [
             { size: 'big',   items: [ { key: 'run', label: 'Doběh +1', points: 1 } ] },
             { size: '',      items: [
-                { key: 'homerun',  label: 'Homerun +6',        points: 6 },
-                { key: 'fieldErr', label: 'Chyba brännera +4', points: 4 },
+                { key: 'homerun',  label: 'Homerun +10',        points: 10 },
+                //{ key: 'fieldErr', label: 'Chyba brännera +4', points: 4 },
             ] },
             { size: 'small', items: [
                 { key: 'minus', label: '−1',     points: -1 },
@@ -331,21 +331,19 @@
         ],
         field: [
             { size: '', items: [
-                { key: 'catch2', label: 'Chycení oběma rukama +1', points: 1 },
+                { key: 'catch2', label: 'Chycení ze vzduchu +3', points: 3 },
             ] },
+            
+            /*{ size: '', items: [
+                { key: 'burned', label: 'Spálený hráč +1', points: 1 },
+            ] },*/
             { size: '', items: [
-                { key: 'catch1', label: 'Chycení jednou rukou +2', points: 2 },
+                { key: 'batNotLaid', label: 'Zahozená pálka +10', points: 1 },
             ] },
-            { size: '', items: [
-                { key: 'burned', label: '🔥 Spálený hráč +1', points: 1, css: 'burn' },
-            ] },
-            { size: '', items: [
-                { key: 'batNotLaid', label: 'Zahozená pálka +1', points: 1 },
-            ] },
-            { size: '', items: [
+            /*{ size: '', items: [
                 { key: 'noBatter', label: 'Bez pálkaře +6',   points: 6 },
                 { key: 'badOrder', label: 'Špatné pořadí +5', points: 5 },
-            ] },
+            ] },*/
             { size: 'small', items: [
                 { key: 'minus', label: '−1',     points: -1 },
                 { key: 'undo',  label: '↶ Zpět', points: 0, undo: true },
